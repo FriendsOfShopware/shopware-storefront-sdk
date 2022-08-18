@@ -1,6 +1,6 @@
 {
   "name": "shopware-storefront-sdk",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Provides Shopware Storefront Utilities as Typescript",
   "private": true,
   "main": "sdk.js",
@@ -17,6 +17,9 @@
   },
   "author": "FriendsOfShopware",
   "license": "MIT",
+  "dependencies": {
+    "deepmerge": "^4.2.2"
+  },
   "devDependencies": {
     "typescript": "^4.7.4"
   }
