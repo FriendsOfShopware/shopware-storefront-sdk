@@ -5,8 +5,16 @@
   "private": true,
   "main": "sdk.js",
   "types": "sdk.d.ts",
+  "jest": {
+    "verbose": true,
+    "testMatch": [
+      "<rootDir>/tests/**/*.ts"
+    ],
+    "preset": "ts-jest"
+  },
   "scripts": {
-    "publish-to-npm": "rm -rf dist; tsc --build && cp package.json dist && cat ./package.json | grep -v '\\\"private\\\":' > dist/package.json; cp README.md dist"
+    "publish-to-npm": "rm -rf dist; tsc --build && cp package.json dist && cat ./package.json | grep -v '\\\"private\\\":' > dist/package.json; cp README.md dist",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -21,6 +29,9 @@
     "deepmerge": "^4.2.2"
   },
   "devDependencies": {
+    "@types/jest": "^28.1.7",
+    "jest": "^28.1.3",
+    "ts-jest": "^28.0.8",
     "typescript": "^4.7.4"
   }
 }
