@@ -1,5 +1,9 @@
 export default class PluginOverride {
-    static override(plugin: any, override: any): void {
+    static override(pluginName: string, override: any): void {
+        PluginOverride.overrideClass((<any>window).PluginManager.getPlugin(pluginName).get('class'), override);
+    }
+
+    static overrideClass(plugin: any, override: any): void {
         if (plugin.__overrides === undefined) {
             plugin.__overrides = {};
             plugin.__overridesStack = {};

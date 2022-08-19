@@ -7,7 +7,7 @@ it("replace method", () => {
         }
     }
 
-    PluginOverride.override(BaseClass, {
+    PluginOverride.overrideClass(BaseClass, {
         method() {
             return 'override';
         }
@@ -22,7 +22,7 @@ it("replace property", () => {
         static foo = 1
     }
 
-    PluginOverride.override(BaseClass, {
+    PluginOverride.overrideClass(BaseClass, {
         foo: 2
     })
 
@@ -36,7 +36,7 @@ it("replace method and call parent before", () => {
         }
     }
 
-    PluginOverride.override(BaseClass, {
+    PluginOverride.overrideClass(BaseClass, {
         method() {
             return this.callParent('method', arguments) + '-override';
         }
@@ -53,13 +53,13 @@ it("replace method multiple times", () => {
         }
     }
 
-    PluginOverride.override(BaseClass, {
+    PluginOverride.overrideClass(BaseClass, {
         method() {
             return this.callParent('method', ...arguments) + '-override';
         }
     })
 
-    PluginOverride.override(BaseClass, {
+    PluginOverride.overrideClass(BaseClass, {
         method() {
             return this.callParent('method', ...arguments) + '-override2';
         }
@@ -77,13 +77,13 @@ it("replace method: arguments are passed", () => {
         }
     }
 
-    PluginOverride.override(BaseClass, {
+    PluginOverride.overrideClass(BaseClass, {
         method(a: string) {
             return this.callParent('method', ...arguments);
         }
     })
 
-    PluginOverride.override(BaseClass, {
+    PluginOverride.overrideClass(BaseClass, {
         method(a: string) {
             return this.callParent('method', ...arguments);
         }
@@ -100,13 +100,13 @@ it("replace method: arguments can be modified", () => {
         }
     }
 
-    PluginOverride.override(BaseClass, {
+    PluginOverride.overrideClass(BaseClass, {
         method(a: string) {
             return this.callParent('method', 'modified');
         }
     })
 
-    PluginOverride.override(BaseClass, {
+    PluginOverride.overrideClass(BaseClass, {
         method(a: string) {
             return this.callParent('method', ...arguments);
         }
