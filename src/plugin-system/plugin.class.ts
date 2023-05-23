@@ -57,8 +57,12 @@ export default abstract class PluginClass {
     private _mergeOptions(options: any): object {
         const dashedPluginName = this._pluginName.replace(/([A-Z])/g, '-$1').replace(/^-/, '').toLowerCase();
         const dataAttributeConfig = this.parseJsonOrFail(dashedPluginName);
-        const dataAttributeOptions = this.el.getAttribute(`data-${dashedPluginName}-options`) || '';
 
+        let dataAttributeOptions = '';
+
+        if (typeof this.el.getAttribute === 'function') {
+            dataAttributeOptions = this.el.getAttribute("data-".concat(dashedPluginName, "-options")) || '';
+        }
 
         // static plugin options
         // previously merged options
@@ -90,6 +94,11 @@ export default abstract class PluginClass {
     }
 
     private parseJsonOrFail(dashedPluginName: string): any | string {
+
+        if (typeof this.el.getAttribute !== 'function') {
+            return '';
+        }
+
         const value = this.el.getAttribute(`data-${dashedPluginName}-config`) || '';
 
         try {
