@@ -21,6 +21,9 @@ jobs:
           node-version: 20
           registry-url: https://registry.npmjs.org/
 
+      - name: Change version
+        run: npm update ${{ github.ref_name }}
+
       - run: pnpm install
 
       - run: pnpm run publish-to-npm
