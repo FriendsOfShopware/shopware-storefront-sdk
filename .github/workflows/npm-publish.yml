@@ -22,7 +22,7 @@ jobs:
           registry-url: https://registry.npmjs.org/
 
       - name: Change version
-        run: npm update ${{ github.ref_name }}
+        run: npm update ${{ github.ref_name }} --git-tag-version=false
 
       - run: pnpm install
 
