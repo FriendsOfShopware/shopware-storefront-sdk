@@ -22,6 +22,6 @@ jobs:
 
       - run: pnpm run publish-to-npm
 
-      - run: cd dist && pnpm publish
+      - run: cd dist && npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_PUBLISH_TOKEN}}
