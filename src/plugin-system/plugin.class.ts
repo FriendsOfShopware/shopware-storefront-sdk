@@ -8,7 +8,7 @@ export default abstract class PluginClass {
     protected readonly options: object;
     protected _initialized: boolean;
 
-    constructor(el: HTMLElement, options: any = {}, pluginName: boolean | string = false) {
+    constructor(el: HTMLElement, options: any = {}, pluginName: false | string = false) {
         this.el = el;
         this.$emitter = new NativeEventEmitter(this.el);
         this._pluginName = this._getPluginName(pluginName);
@@ -45,7 +45,7 @@ export default abstract class PluginClass {
         plugin.get('instances').push(this);
     }
 
-    private _getPluginName(pluginName: boolean | string) {
+    private _getPluginName(pluginName: false | string): string {
         if (pluginName === false) {
             // @ts-ignore
             return this.constructor.name;

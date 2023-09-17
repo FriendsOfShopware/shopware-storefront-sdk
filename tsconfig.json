@@ -1,7 +1,8 @@
 {
   "include": ["./src/**/*"],
   "compilerOptions": {
-    "target": "ES2015",
+    "moduleResolution": "Bundler",
+    "target": "ES2020",
     "strict": true,
     "outDir": "dist",
     "declaration": true,
