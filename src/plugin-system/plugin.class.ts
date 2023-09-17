@@ -2,11 +2,11 @@ import NativeEventEmitter from "./NativeEventEmitter";
 import deepmerge from "deepmerge";
 
 export default abstract class PluginClass {
-    private readonly el: HTMLElement;
-    private $emitter: NativeEventEmitter;
-    private readonly _pluginName: String;
-    private readonly options: object;
-    private _initialized: boolean;
+    protected readonly el: HTMLElement;
+    protected $emitter: NativeEventEmitter;
+    protected readonly _pluginName: String;
+    protected readonly options: object;
+    protected _initialized: boolean;
 
     constructor(el: HTMLElement, options: any = {}, pluginName: boolean | string = false) {
         this.el = el;
