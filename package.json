@@ -1,5 +1,5 @@
 {
-  "name": "shopware-storefront-sdk",
+  "name": "@friendsofshopware/storefront-sdk",
   "description": "Provides Shopware Storefront Utilities as Typescript",
   "private": true,
   "main": "sdk.js",

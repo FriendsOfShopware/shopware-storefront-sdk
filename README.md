@@ -14,7 +14,7 @@ This is especially helpful if you want to build your plugin without having the S
 ## Installation
 
 ```bash
-npm install shopware-storefront-sdk
+npm install @friendsofshopware/storefront-sdk
 ```
 
 ## Webpack Configuration
@@ -27,30 +27,33 @@ For this, please create a custom webpack configuration in your plugin that resol
 Create a new file **../Resources/app/storefront/build/webpack.config.js** and add this content:
 
 ```js
-const {resolve, join} = require("path");
-
-module.exports = () => {
+module.exports = (params) => {
     return {
         resolve: {
-            alias: {
-                '@shopware-storefront-sdk': resolve(
-                    join(__dirname, '..', 'node_modules', 'shopware-storefront-sdk'),
-                ),
-            },
-        },
+            modules: [
+                `${params.basePath}Resources/app/storefront/node_modules`,
+            ],
+        }
     };
-};
+}
 ```
 
 ## Usage
 
+### Creating JS Plugin
+
 You can now use the plugin classes from this package instead of the original ones in your Shopware Javascript plugins.
 
 ```js 
-import Plugin from '@shopware-storefront-sdk/plugin-system/plugin.class';
+import Plugin from '@friendsofshopware/storefront-sdk/plugin-system/plugin.class';
 
 export default class MyStorefrontPlugin extends Plugin {
+    constructor(el, options, pluginName) {
+        super(el, options, pluginName);
 
+        // run your own code here
+        this.el.addEventListener('click', this.onClick.bind(this));
+    }
 }
 ```
 
