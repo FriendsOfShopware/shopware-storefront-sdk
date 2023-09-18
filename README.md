@@ -51,8 +51,16 @@ export default class MyStorefrontPlugin extends Plugin {
     constructor(el, options, pluginName) {
         super(el, options, pluginName);
 
+        this.setup();
+    }
+
+    init(): void {
         // run your own code here
         this.el.addEventListener('click', this.onClick.bind(this));
+    }
+
+    onClick(event) {
+        console.log('called');
     }
 }
 ```

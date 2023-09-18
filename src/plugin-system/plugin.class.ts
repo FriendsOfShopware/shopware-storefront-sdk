@@ -5,18 +5,26 @@ export default abstract class PluginClass {
     protected readonly el: HTMLElement;
     protected $emitter: NativeEventEmitter;
     protected readonly _pluginName: String;
-    protected options: object;
+    private readonly initialOptions: object = {};
+    protected options: object = {};
     protected _initialized: boolean;
 
     constructor(el: HTMLElement, options: any = {}, pluginName: false | string = false) {
         this.el = el;
         this.$emitter = new NativeEventEmitter(this.el);
         this._pluginName = this._getPluginName(pluginName);
-        this.options = this._mergeOptions(options);
         this._initialized = true;
+        this.initialOptions = options;
 
         this._registerInstance();
     }
+
+    protected setup() {
+        this.options = this._mergeOptions(this.initialOptions);
+        this.init();
+    }
+
+    abstract init(): void;
 
     _update() {
         if (!this._initialized) return;
@@ -43,7 +51,7 @@ export default abstract class PluginClass {
         return pluginName;
     }
 
-    private _mergeOptions(options: any): object {
+    protected _mergeOptions(options: any): object {
         const dashedPluginName = this._pluginName.replace(/([A-Z])/g, '-$1').replace(/^-/, '').toLowerCase();
         const dataAttributeConfig = this.parseJsonOrFail(dashedPluginName);
 
