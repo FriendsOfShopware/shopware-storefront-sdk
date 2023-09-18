@@ -5,7 +5,7 @@ export default abstract class PluginClass {
     protected readonly el: HTMLElement;
     protected $emitter: NativeEventEmitter;
     protected readonly _pluginName: String;
-    protected readonly options: object;
+    protected options: object;
     protected _initialized: boolean;
 
     constructor(el: HTMLElement, options: any = {}, pluginName: false | string = false) {
