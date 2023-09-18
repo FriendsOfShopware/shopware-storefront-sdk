@@ -13,17 +13,9 @@ export default abstract class PluginClass {
         this.$emitter = new NativeEventEmitter(this.el);
         this._pluginName = this._getPluginName(pluginName);
         this.options = this._mergeOptions(options);
-        this._initialized = false;
+        this._initialized = true;
 
         this._registerInstance();
-        this._init();
-    }
-
-    private _init() {
-        if (this._initialized) return;
-
-        this.init();
-        this._initialized = true;
     }
 
     _update() {
@@ -31,9 +23,6 @@ export default abstract class PluginClass {
 
         this.update();
     }
-
-    abstract init(): void;
-
 
     update(): void {}
 

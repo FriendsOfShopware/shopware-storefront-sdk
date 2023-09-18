@@ -12,14 +12,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: pnpm/action-setup@v2
+      - uses: oven-sh/setup-bun@v1
         with:
-          version: 8
+          bun-version: latest
 
-      - uses: actions/setup-node@v2
-        with:
-          node-version: 20
-          registry-url: https://registry.npmjs.org/
+      - run: bun install
 
       - name: Change version
         run: |
@@ -27,9 +24,7 @@ jobs:
           cp package.new.json package.json
           rm package.new.json
 
-      - run: pnpm install
-
-      - run: pnpm run publish-to-npm
+      - run: bun run publish-to-npm
 
       - run: cd dist && npm publish --provenance
         env:

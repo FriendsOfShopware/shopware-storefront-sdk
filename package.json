@@ -4,16 +4,9 @@
   "private": true,
   "main": "sdk.js",
   "types": "sdk.d.ts",
-  "jest": {
-    "verbose": true,
-    "testMatch": [
-      "<rootDir>/tests/**/*.ts"
-    ],
-    "preset": "ts-jest"
-  },
   "scripts": {
     "publish-to-npm": "rm -rf dist; tsc --build && cp package.json dist && cat ./package.json | grep -v '\\\"private\\\":' > dist/package.json; cp README.md dist",
-    "test": "jest"
+    "test": "bun test"
   },
   "repository": {
     "type": "git",
@@ -28,9 +21,6 @@
     "deepmerge": "^4.3.1"
   },
   "devDependencies": {
-    "@types/jest": "^29.5.5",
-    "jest": "^29.7.0",
-    "ts-jest": "^29.1.1",
     "typescript": "^5.2.2"
   },
   "version": "0.0.9"
