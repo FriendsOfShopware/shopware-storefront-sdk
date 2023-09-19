@@ -4,7 +4,7 @@ interface PluginManager {
     /**
      * Registers a plugin to the plugin manager.
      */
-    registerPlugin(pluginName: String, pluginClass: Object, selector: String | NodeList | HTMLElement, options?: Object): void
+    register(pluginName: String, pluginClass: Object, selector: String | NodeList | HTMLElement, options?: Object): void
 
     /**
      * Removes a plugin from the plugin manager

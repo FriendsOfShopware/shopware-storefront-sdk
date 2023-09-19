@@ -38,6 +38,18 @@ module.exports = (params) => {
 }
 ```
 
+## TSConfig
+
+To have `PluginManager` typed, you need to create a `tsconfig.json` (`src/Resources/app/storefront/tsconfig.json`) with following content:
+
+```json
+{
+    "compilerOptions": {
+        "types": ["@friendsofshopware/storefront-sdk"]
+    }
+}
+```
+
 ## Usage
 
 ### Creating JS Plugin
