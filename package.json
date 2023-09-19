@@ -2,8 +2,8 @@
   "name": "@friendsofshopware/storefront-sdk",
   "description": "Provides Shopware Storefront Utilities as Typescript",
   "private": true,
-  "main": "sdk.js",
-  "types": "sdk.d.ts",
+  "main": "index.js",
+  "types": "index.d.ts",
   "scripts": {
     "publish-to-npm": "rm -rf dist; tsc --build && cp package.json dist && cat ./package.json | grep -v '\\\"private\\\":' > dist/package.json; cp README.md dist",
     "test": "bun test"
@@ -25,6 +25,5 @@
     "@types/mocha": "10.0.1",
     "typescript": "^5.2.2",
     "jsdom": "22.1.0"
-  },
-  "version": "0.0.9"
+  }
 }

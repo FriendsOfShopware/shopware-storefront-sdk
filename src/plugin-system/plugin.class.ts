@@ -35,11 +35,15 @@ export default abstract class PluginClass {
     update(): void {}
 
     _registerInstance() {
-        const elementPluginInstances = (<any>window).PluginManager.getPluginInstancesFromElement(this.el);
+        const elementPluginInstances = window.PluginManager.getPluginInstancesFromElement(this.el);
         elementPluginInstances.set(this._pluginName, this);
 
-        const plugin = (<any>window).PluginManager.getPlugin(this._pluginName, false);
-        plugin.get('instances').push(this);
+        const plugin = window.PluginManager.getPlugin(this._pluginName, false);
+        
+        if (plugin.has('instances')) {
+            const instances = plugin.get('instances');
+            (<Array<object>><unknown>instances).push(this);
+        }
     }
 
     private _getPluginName(pluginName: false | string): string {
