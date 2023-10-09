@@ -59,5 +59,17 @@ interface PluginManager {
 declare global {
     interface Window {
         PluginManager: PluginManager,
+        router: {
+            'frontend.cart.offcanvas': string,
+            'frontend.cookie.offcanvas': string,
+            'frontend.checkout.finish.page': string,
+            'frontend.checkout.info': string,
+            'frontend.menu.offcanvas': string,
+            'frontend.cms.page': string,
+            'frontend.cms.navigation.page': string,
+            'frontend.account.addressbook': string,
+            'frontend.country.country-data': string,
+            'frontend.app-system.generate-token': string,
+        }
      }
 }
