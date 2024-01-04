@@ -1,0 +1,17 @@
+{
+  "name": "@friendsofshopware/storefront-types",
+  "description": "Provides Shopware Storefront Typescript types",
+  "types": "index.d.ts",
+  "scripts": {
+    "publish-to-npm": "rm -rf dist; tsc --build && cp package.json dist && cat ./package.json | grep -v '\\\"private\\\":' > dist/package.json; cp README.md dist; cp index.d.ts dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FriendsOfShopware/shopware-storefront-sdk.git"
+  },
+  "bugs": {
+    "url": "https://github.com/FriendsOfShopware/shopware-storefront-sdk/issues"
+  },
+  "author": "FriendsOfShopware",
+  "license": "MIT"
+}

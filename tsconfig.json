@@ -9,7 +9,7 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "types": [
-      "."
+      "@friendsofshopware/storefront-types"
     ]
   }
 }
