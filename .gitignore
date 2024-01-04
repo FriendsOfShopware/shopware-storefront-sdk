@@ -1,5 +1,6 @@
 /.idea
 /.fleet
 /dist
+/types/test.ts
 
 /node_modules
