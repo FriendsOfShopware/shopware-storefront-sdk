@@ -45,10 +45,12 @@ To have `PluginManager` typed, you need to create a `tsconfig.json` (`src/Resour
 ```json
 {
     "compilerOptions": {
-        "types": ["@friendsofshopware/storefront-sdk"]
+        "types": ["@friendsofshopware/storefront-types"]
     }
 }
 ```
+
+`@friendsofshopware/storefront-types` is a separate NPM package which contains only the types of the storefront.
 
 ## Usage
 
