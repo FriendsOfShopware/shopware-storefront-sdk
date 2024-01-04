@@ -1,5 +1,6 @@
 {
   "name": "@friendsofshopware/storefront-types",
+  "version": "0.1.1",
   "description": "Provides Shopware Storefront Typescript types",
   "types": "index.d.ts",
   "scripts": {
