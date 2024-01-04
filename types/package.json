@@ -6,6 +6,9 @@
   "scripts": {
     "publish-to-npm": "rm -rf dist; tsc --build && cp package.json dist && cat ./package.json | grep -v '\\\"private\\\":' > dist/package.json; cp README.md dist; cp index.d.ts dist"
   },
+  "dependencies": {
+    "@types/bootstrap": "^5.2.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/FriendsOfShopware/shopware-storefront-sdk.git"

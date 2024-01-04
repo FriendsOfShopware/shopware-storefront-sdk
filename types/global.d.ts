@@ -14,7 +14,12 @@ declare global {
             'frontend.country.country-data': string,
             'frontend.app-system.generate-token': string,
         }
+        bootstrap: typeof import('bootstrap')
      }
+
+    interface Document {
+        $emitter: import('./plugin-system/native-event-emitter').default,
+    }
 }
 
 export {}

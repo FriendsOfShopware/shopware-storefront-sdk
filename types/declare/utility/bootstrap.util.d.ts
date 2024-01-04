@@ -1,6 +1,6 @@
 interface BootstrapUtil {
-    initTooltip(): any
-    initPopover(): any
+    initTooltip(): bootstrap.Tooltip
+    initPopover(): bootstrap.Popover
     initBootstrapPlugins(): void
 }
 
