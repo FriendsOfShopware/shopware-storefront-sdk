@@ -45,12 +45,12 @@ To have `PluginManager` typed, you need to create a `tsconfig.json` (`src/Resour
 ```json
 {
     "compilerOptions": {
-        "types": ["@friendsofshopware/storefront-types"]
+        "types": ["@shopware-ag/storefront-types"]
     }
 }
 ```
 
-`@friendsofshopware/storefront-types` is a separate NPM package which contains only the types of the storefront.
+`@shopware-ag/storefront-types` is a separate NPM package which contains only the types of the storefront.
 
 ## Usage
 
@@ -58,7 +58,7 @@ To have `PluginManager` typed, you need to create a `tsconfig.json` (`src/Resour
 
 You can now use the plugin classes from this package instead of the original ones in your Shopware Javascript plugins.
 
-```js 
+```js
 import Plugin from '@friendsofshopware/storefront-sdk/plugin-system/plugin.class';
 
 export default class MyStorefrontPlugin extends Plugin {
